@@ -8,6 +8,7 @@
 
 #import "PAMTableViewController.h"
 #import "PAMCell.h"
+
 @interface PAMTableViewController ()
 
 @end
@@ -29,6 +30,34 @@
 
     UINib *cellNib =[UINib nibWithNibName:NSStringFromClass([PAMCell class]) bundle:nil];
     [self.tableView registerNib: cellNib forCellReuseIdentifier:@"Cell"];
+}
+
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    [self.tableView addObserver:self
+                     forKeyPath:@"contentOffset"
+                        options:NSKeyValueObservingOptionNew
+                        context:nil];
+}
+-(void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    [self.tableView removeObserver:self
+                        forKeyPath:@"contentOffset"];
+}
+
+-(void)observeValueForKeyPath:(NSString *)keyPath
+                     ofObject:(id)object
+                       change:(NSDictionary *)change
+                      context:(void *)context
+{
+    // 表示されているCellに、写真の位置をずらす指示を出す
+    NSArray *cells = [self.tableView visibleCells];
+    for (PAMCell *cell in cells) {
+        [cell movePhotoWithTableView:self.tableView];
+    }
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -54,9 +83,9 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    PAMCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    // Configure the cell...
+    [cell movePhotoWithTableView:tableView];
     
     return cell;
 }

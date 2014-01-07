@@ -20,10 +20,10 @@
 		3B4488BB187C2A780017455A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B44889D187C2A780017455A /* UIKit.framework */; };
 		3B4488C3187C2A780017455A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3B4488C1187C2A780017455A /* InfoPlist.strings */; };
 		3B4488C5187C2A780017455A /* MoveImageCellTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B4488C4187C2A780017455A /* MoveImageCellTests.m */; };
-		3B4488D1187C2AA10017455A /* hougan.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B4488D0187C2AA10017455A /* hougan.png */; };
 		3B4488D7187C2B340017455A /* PAMTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B4488D6187C2B340017455A /* PAMTableViewController.m */; };
 		3B4488DA187C2B900017455A /* PAMCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B4488D9187C2B900017455A /* PAMCell.m */; };
 		3B4488DC187C2BAB0017455A /* PAMCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B4488DB187C2BAB0017455A /* PAMCell.xib */; };
+		3B4488DE187C3AE90017455A /* image.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B4488DD187C3AE90017455A /* image.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,12 +54,12 @@
 		3B4488C0187C2A780017455A /* MoveImageCellTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MoveImageCellTests-Info.plist"; sourceTree = "<group>"; };
 		3B4488C2187C2A780017455A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		3B4488C4187C2A780017455A /* MoveImageCellTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MoveImageCellTests.m; sourceTree = "<group>"; };
-		3B4488D0187C2AA10017455A /* hougan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hougan.png; sourceTree = "<group>"; };
 		3B4488D5187C2B340017455A /* PAMTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PAMTableViewController.h; sourceTree = "<group>"; };
 		3B4488D6187C2B340017455A /* PAMTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PAMTableViewController.m; sourceTree = "<group>"; };
 		3B4488D8187C2B900017455A /* PAMCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PAMCell.h; sourceTree = "<group>"; };
 		3B4488D9187C2B900017455A /* PAMCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PAMCell.m; sourceTree = "<group>"; };
 		3B4488DB187C2BAB0017455A /* PAMCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PAMCell.xib; sourceTree = "<group>"; };
+		3B4488DD187C3AE90017455A /* image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,7 +119,7 @@
 		3B44889F187C2A780017455A /* MoveImageCell */ = {
 			isa = PBXGroup;
 			children = (
-				3B4488D0187C2AA10017455A /* hougan.png */,
+				3B4488DD187C3AE90017455A /* image.png */,
 				3B4488A8187C2A780017455A /* PAMAppDelegate.h */,
 				3B4488A9187C2A780017455A /* PAMAppDelegate.m */,
 				3B4488AB187C2A780017455A /* Main.storyboard */,
@@ -244,7 +244,7 @@
 				3B4488A4187C2A780017455A /* InfoPlist.strings in Resources */,
 				3B4488DC187C2BAB0017455A /* PAMCell.xib in Resources */,
 				3B4488AD187C2A780017455A /* Main.storyboard in Resources */,
-				3B4488D1187C2AA10017455A /* hougan.png in Resources */,
+				3B4488DE187C3AE90017455A /* image.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
