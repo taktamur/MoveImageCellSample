@@ -1,5 +1,5 @@
 //
-//  PAMViewController.h
+//  PAMTableViewController.h
 //  MoveImageCell
 //
 //  Created by tak on 2014/01/07.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PAMViewController : UIViewController
+@interface PAMTableViewController : UITableViewController
 
 @end
