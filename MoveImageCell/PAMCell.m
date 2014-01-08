@@ -51,8 +51,8 @@
     float centerDiffY = displayedCenterY - tableView.bounds.size.height/2;
     float gapRatioFromCenterY = centerDiffY*2/tableView.bounds.size.height;
     // centerAspectY は、cellの中央が画面に入っている場合 -1.0 〜1.0の値をとる。
-    NSLog( @"displayedCenterY=%f centerDiffY=%f gapRatioFromCenterY=%f",
-          displayedCenterY,centerDiffY,gapRatioFromCenterY);
+//    NSLog( @"displayedCenterY=%f centerDiffY=%f gapRatioFromCenterY=%f",
+//          displayedCenterY,centerDiffY,gapRatioFromCenterY);
     return gapRatioFromCenterY;
 }
 

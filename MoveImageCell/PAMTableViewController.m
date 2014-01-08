@@ -30,35 +30,35 @@
     [self.tableView registerNib: cellNib forCellReuseIdentifier:@"Cell"];
 }
 
--(void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
-    // スクロールの監視を始める
-    [self.tableView addObserver:self
-                     forKeyPath:@"contentOffset"
-                        options:NSKeyValueObservingOptionNew
-                        context:nil];
-}
--(void)viewWillDisappear:(BOOL)animated
-{
-    [super viewWillDisappear:animated];
-    // スクロールの監視を終わる
-    [self.tableView removeObserver:self
-                        forKeyPath:@"contentOffset"];
-}
-
-// スクロールしたら呼び出される
--(void)observeValueForKeyPath:(NSString *)keyPath
-                     ofObject:(id)object
-                       change:(NSDictionary *)change
-                      context:(void *)context
-{
-    // 表示されているCellに、写真の位置をずらす指示を出す
-    NSArray *cells = [self.tableView visibleCells];
-    for (PAMCell *cell in cells) {
-        [cell movePhotoWithTableView:self.tableView];
-    }
-}
+// スクロールをKVOで検出していた時のコード↓
+//-(void)viewDidAppear:(BOOL)animated
+//{
+//    [super viewDidAppear:animated];
+//    // スクロールの監視を始める
+//    [self.tableView addObserver:self
+//                     forKeyPath:@"contentOffset"
+//                        options:NSKeyValueObservingOptionNew
+//                        context:nil];
+//}
+//-(void)viewWillDisappear:(BOOL)animated
+//{
+//    [super viewWillDisappear:animated];
+//    // スクロールの監視を終わる
+//    [self.tableView removeObserver:self
+//                        forKeyPath:@"contentOffset"];
+//}
+//// スクロールしたら呼び出される
+//-(void)observeValueForKeyPath:(NSString *)keyPath
+//                     ofObject:(id)object
+//                       change:(NSDictionary *)change
+//                      context:(void *)context
+//{
+//    // 表示されているCellに、写真の位置をずらす指示を出す
+//    NSArray *cells = [self.tableView visibleCells];
+//    for (PAMCell *cell in cells) {
+//        [cell movePhotoWithTableView:self.tableView];
+//    }
+//}
 
 #pragma mark - Table view data source
 
@@ -83,5 +83,17 @@
     [cell movePhotoWithTableView:tableView];
     
     return cell;
+}
+
+#pragma mark - UITableViewDelegate
+// tableViewがスクロールした際に呼び出される
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    // 表示されているCellに、写真の位置をずらす指示を出す
+    NSArray *cells = [self.tableView visibleCells];
+    for (PAMCell *cell in cells) {
+        [cell movePhotoWithTableView:self.tableView];
+    }
+
 }
 @end
